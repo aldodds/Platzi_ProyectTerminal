@@ -14,7 +14,7 @@ do
     #Eliminar líneas vacías
     #Reemplazar campos vacíos con 'N/A'
 
-    cat "$archivo" | sed 's/^[\t]*//' | sed '/^$/d' | sed 's/,,/,N/A,/g; s/,$/,N/A' > "$DIR_SALIDA/${nombre_archivo%.csv}_limpio.csv"
+    cat "$archivo" | sed 's/^[[:space:]]*//' | sed '/^$/d' | sed 's/,,/,N\/A,/g; s/,$/,N\/A/' > "$DIR_SALIDA/${nombre_archivo%.csv}_limpio.csv"
 
     echo "Archivo limpio guardado como ${nombre_archivo%.csv}_limpio.csv"
 done
